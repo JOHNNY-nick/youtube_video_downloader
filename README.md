@@ -1,39 +1,71 @@
 # YouTube Downloader (ytp.py)
 
-A simple Python utility to download YouTube videos and playlists in high quality using `yt-dlp`.
+A simple and efficient Python script to download YouTube videos and playlists in the best possible quality (MP4) using `yt-dlp`. This tool automatically handles authentication using your Chrome session cookies.
 
-## How to use
+---
 
-Follow these steps to set up and run the script:
+## 🚀 Quick Start Guide
 
-### 1. Installing the dependencies
-Ensure you have Python and FFmpeg installed on your system. Then, install the required Python library:
-```bash
-pip install -r requirements.txt
+This guide is designed for absolute beginners using the **Windows Command Prompt (Invite de commande)**.
+
+### Step 0: Prerequisites (One-time setup)
+Before running the script, you need two things installed on your computer:
+
+1. **Python**: Download from [python.org](https://www.python.org/downloads/).
+   - **⚠️ IMPORTANT:** During installation, check the box **"Add Python to PATH"**.
+   - *Pro Tip:* You can also install it via command line: `winget install -e --id Python.Python.3`
+2. **FFmpeg**: Needed to merge video and audio into a single MP4 file.
+   - Download the "essentials" build from [gyan.dev](https://www.gyan.dev/ffmpeg/builds/).
+   - Unzip it and add the `bin` folder to your System PATH.
+
+---
+
+### Step 1: Download the Project
+Open your **Command Prompt** (Press `Win + R`, type `cmd`, and press Enter) and run:
+```cmd
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+cd YOUR_REPO_NAME
 ```
 
-### 2. Installing "Get cookies.txt LOCALLY" on Chrome
-To download restricted or private videos, the script needs your YouTube session cookies. 
-- Go to the Chrome Web Store and install the extension [Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/ccmgnabimndgehpdbnneghjjffabbdie).
-- This extension allows the script to access your login state securely.
+### Step 2: Install Dependencies
+Install the required Python library by running:
+```cmd
+python -m pip install -r requirements.txt
+```
 
-### 3. Logging in on YouTube
-- Open Google Chrome.
-- Go to [YouTube.com](https://www.youtube.com) and log in with your account.
-- Keep the tab open or ensure you don't log out, so the cookies remain valid.
+### Step 3: Setup Browser Cookies
+To download age-restricted or private videos, the script uses your Chrome login:
+1. **Install Extension:** Add [Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/ccmgnabimndgehpdbnneghjjffabbdie) to your Google Chrome.
+2. **Log in:** Open [YouTube.com](https://www.youtube.com) and log in to your account.
+3. Keep Chrome open or don't log out. The script will find the cookies automatically.
 
-### 4. Using the script
-Run the script by providing the URL of a single video or an entire playlist. The script will automatically fetch the best quality (MP4).
+---
 
-**For a single video:**
-```bash
+## 📥 How to Use
+
+To download, navigate to the folder in your Command Prompt and use these commands:
+
+### Download a Single Video
+```cmd
 python ytp.py "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
-**For a whole playlist:**
-```bash
+### Download a Full Playlist
+```cmd
 python ytp.py "https://www.youtube.com/playlist?list=PLAYLIST_ID"
 ```
 
 ---
-**Note:** This script is designed for Windows. It will attempt to extract cookies from your Chrome profile automatically to authenticate your downloads.
+
+## 💡 Windows Survival Tips
+- **Where am I?** Type `dir` to see the files in your current folder (like `ls` on Linux).
+- **Fast Access:** Open your folder in File Explorer, click the address bar, type `cmd`, and press Enter to open the terminal right there.
+- **Errors?** If `pip` doesn't work, always try `python -m pip`.
+
+---
+
+## ⚖️ License & Security
+- **License:** This project is under the **MIT License**.
+- **Security:** Do **NOT** upload your `cookies.txt` or `.mp4` files to GitHub. They are for your local use only.
+
+**Disclaimer:** This tool is for personal use and educational purposes only. Please respect YouTube's Terms of Service.
